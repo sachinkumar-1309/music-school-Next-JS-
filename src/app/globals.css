@@ -31,3 +31,12 @@ body {
     text-wrap: balance;
   }
 }
+/* Add this CSS to hide the vertical scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
