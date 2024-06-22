@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/Components/Navbar";
+import Footer from "@/Components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,11 +16,14 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
 	return (
 		<html lang="en" className="dark">
-			<body className={inter.className}>
+			<body className={`${inter.className} min-h-screen bg-black/[0.96] antialiased bg-grid-white/[0.02] `}>
 				<div className="relative flex items-center justify-center w-full ">
 					<Navbar />
 				</div>
 				{children}
+				<div>
+				<Footer />
+				</div>
 			</body>
 		</html>
 	);
