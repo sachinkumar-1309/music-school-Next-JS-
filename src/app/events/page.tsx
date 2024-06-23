@@ -1,4 +1,5 @@
 import React from "react";
+import { HoverBorderGradient } from "@/Components/ui/hover-border-gradient";
 
 const events = [
 	{
@@ -86,30 +87,38 @@ const Events = () => {
 	return (
 		<section className="min-h-screen py-12 pt-36 text-white">
 			<div className="container mx-auto px-4">
-				<h2 className="text-4xl md:text-6xl text-center font-extrabold mb-12 underline decoration-blue-500">
-					Upcoming Events
-				</h2>
+				<h2 className="text-4xl md:text-6xl text-center font-extrabold mb-12 underline decoration-blue-500"></h2>
 				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
 					{events.map((event: Event) => (
-						<div
-							key={event.id}
-							className="border h- border-gray-700 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-							<img
-								src={event.image}
-								alt={event.title}
-								className="rounded-lg mb-4 h-[280px] w-full"
-							/>
-							<div className="p-6 w-full">
-                            <h3 className="text-2xl font-bold mb-2">{event.title}</h3>
-							<p className="text-xl text-blue-400 mb-2">
-								{event.date} at {event.time}
-							</p>
-							<p className="text-lg text-gray-400 mb-2">{event.location}</p>
-							<p className="text-md text-gray-300 ">{event.description}</p>
-                            </div>
-						</div>
+						<HoverBorderGradient
+							containerClassName="rounded"
+							as="button"
+							className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2">
+							<div
+								key={event.id}
+								className=" bg-black rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+								<img
+									src={event.image}
+									alt={event.title}
+									className="rounded-lg mb-4 h-[280px] w-full"
+								/>
+								<div className="p-6 w-full">
+									<h3 className="text-2xl font-bold mb-2">{event.title}</h3>
+									<p className="text-xl text-blue-400 mb-2">
+										{event.date} at {event.time}
+									</p>
+									<p className="text-lg text-gray-400 mb-2">
+										{event.location}
+									</p>
+									<p className="text-md text-gray-300 ">
+										{event.description}
+									</p>
+								</div>
+							</div>
+						</HoverBorderGradient>
 					))}
 				</div>
+				<div className="m-40 flex justify-center text-center"></div>
 			</div>
 		</section>
 	);
