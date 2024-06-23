@@ -34,7 +34,7 @@ export default function Navbar({ className }: { className?: string }) {
 						active={active}
 						item="Events"></MenuItem>
 				</Link>
-				<Link href={"/aboutUs"}>
+				<Link href={"/aboutus"}>
 					<MenuItem
 						setActive={setActive}
 						active={active}

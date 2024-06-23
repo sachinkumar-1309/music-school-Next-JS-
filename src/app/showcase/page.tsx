@@ -18,7 +18,7 @@ const showcases: Showcases[] = [
 		title: "Piano Performance",
 		description:
 			"A beautiful piano performance by our student, Alice Johnson, showcasing her talent and dedication.",
-		media: ".mp4",
+		media: "/courses/Videos/Piano.mp4",
 		type: "video",
 		student: "Alice Johnson",
 	},
@@ -27,7 +27,7 @@ const showcases: Showcases[] = [
 		title: "Violin Recital",
 		description:
 			"An amazing violin recital by Michael Lee, demonstrating his exceptional skills.",
-		media: "/courses/piano-playing",
+		media: "/courses/Videos/Violin.mp4",
 		type: "video",
 		student: "Michael Lee",
 	},
@@ -36,7 +36,7 @@ const showcases: Showcases[] = [
 		title: "Guitar Solo",
 		description:
 			"An electrifying guitar solo performance by Emily Brown. A must-watch!",
-		media: "/courses/piano-playing",
+		media: "/courses/Videos/Guitar.mp4",
 		type: "video",
 		student: "Emily Brown",
 	},
@@ -45,7 +45,7 @@ const showcases: Showcases[] = [
 		title: "Vocal Performance",
 		description:
 			"A stunning vocal performance by Sarah Wilson, showcasing her powerful voice.",
-		media: "/courses/piano-playing",
+		media: "/courses/Videos/Vocal.mp4",
 		type: "video",
 		student: "Sarah Wilson",
 	},
@@ -79,14 +79,15 @@ const Showcase = () => {
 							<div className="thumbnail ">
 								{showcase.type === "video" ? (
 									<video
-										className="rounded-lg"
-										src={showcase.media}
-										width={500}
-										height={500}
-										controls
-										autoPlay
-										muted
-									/>
+									className="rounded-lg"
+									src={showcase.media}
+									width={500}
+									height={500}
+									muted
+									loop
+									onMouseEnter={(e) => (e.currentTarget as HTMLVideoElement).play()}
+									onMouseLeave={(e) => (e.currentTarget as HTMLVideoElement).pause()}
+								/>
 								) : (
 									<video className="rounded-lg" src={showcase.media} />
 								)}

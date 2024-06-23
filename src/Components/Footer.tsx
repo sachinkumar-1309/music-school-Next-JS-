@@ -24,7 +24,7 @@ function Footer() {
 						</li>
 						<li>
 							<a
-								href="/aboutUs"
+								href="/aboutus"
 								className="hover:text-white transition-colors duration-300">
 								About
 							</a>
@@ -46,20 +46,22 @@ function Footer() {
 					</ul>
 				</div>
 				<div>
-					<h2 className="text-white text-lg font-semibold mb-4">Connect me on</h2>
+					<h2 className="text-white text-lg font-semibold mb-4">
+						Connect me on
+					</h2>
 					<div className="flex space-x-4">
 						<a
-							href="#"
+							href="https://github.com/sachinkumar-1309"
 							className="hover:text-white transition-colors duration-300">
 							Github
 						</a>
 						<a
-							href="#"
+							href="https://x.com/sachinkg1309"
 							className="hover:text-white transition-colors duration-300">
 							Twitter
 						</a>
 						<a
-							href="#"
+							href="http://www.linkedin.com/in/sachin-kumar-gupta-1309-"
 							className="hover:text-white transition-colors duration-300">
 							LinkedIn
 						</a>
