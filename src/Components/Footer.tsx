@@ -10,48 +10,48 @@ function Footer() {
 						fostering a vibrant community of musicians.
 					</p>
 				</div>
-				<div>
+				<div className=" text-center">
 					<h2 className="text-white text-lg font-semibold mb-4">
 						Quick Links
 					</h2>
-					<ul>
+					<ul className="mr-10">
 						<li>
 							<a
-								href="#"
+								href="/"
 								className="hover:text-white transition-colors duration-300">
 								Home
 							</a>
 						</li>
 						<li>
 							<a
-								href="#"
+								href="/aboutUs"
 								className="hover:text-white transition-colors duration-300">
 								About
 							</a>
 						</li>
 						<li>
 							<a
-								href="#"
-								className="hover:text-white transition-colors duration-300">
+								href="/courses"
+								className="hover:text-white transition-colors duration-300 ml-3">
 								Courses
 							</a>
 						</li>
 						<li>
 							<a
-								href="#"
-								className="hover:text-white transition-colors duration-300">
+								href="/contact"
+								className="hover:text-white transition-colors duration-300 ml-2">
 								Contact
 							</a>
 						</li>
 					</ul>
 				</div>
 				<div>
-					<h2 className="text-white text-lg font-semibold mb-4">Follow Us</h2>
+					<h2 className="text-white text-lg font-semibold mb-4">Connect me on</h2>
 					<div className="flex space-x-4">
 						<a
 							href="#"
 							className="hover:text-white transition-colors duration-300">
-							Facebook
+							Github
 						</a>
 						<a
 							href="#"
@@ -61,7 +61,7 @@ function Footer() {
 						<a
 							href="#"
 							className="hover:text-white transition-colors duration-300">
-							Instagram
+							LinkedIn
 						</a>
 					</div>
 				</div>
@@ -69,10 +69,10 @@ function Footer() {
 					<h2 className="text-white text-lg font-semibold mb-4">
 						Contact Us
 					</h2>
-					<p>New Delhi, India</p>
-					<p>Delhi 10001</p>
-					<p>Email: info@musicschool.com</p>
-					<p>Phone: (123) 456-7890</p>
+					<p>Jharkhand, India</p>
+					<p>Dumka 814101</p>
+					<p>Email: sachinkg1309@gmail.com</p>
+					<p>Phone: (+91) 9693186899</p>
 				</div>
 			</div>
 			<p className="text-center text-xs pt-8">

@@ -71,7 +71,12 @@ const Testimonials = () => {
 	}
 
 	return (
-		<section className="py-24 min-h-screen antialiased flex ">
+		// <section className="py-24 min-h-screen antialiased ">
+		// 	{/* <h1 className="text-3xl text-center w-full h-auto">Feedbacks</h1> */}
+
+		// </section>
+		<div>
+			<h1 className="text-3xl text-center w-full text-gray-300">Feedbacks</h1>
 			<div className={`${styles.testimonials} rounded-full`}>
 				<div className={styles.slider}>
 					{testimonials.map((testimonial, index) => (
@@ -100,7 +105,7 @@ const Testimonials = () => {
 					</button>
 				</div>
 			</div>
-		</section>
+		</div>
 	);
 };
 
