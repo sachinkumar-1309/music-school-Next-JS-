@@ -48,15 +48,12 @@ const AboutUs = () => {
 	return (
 		<section className="min-h-screen py-12 pt-36 text-gray-100">
 			<div className="container mx-auto px-4">
-				<h2 className="text-4xl md:text-6xl text-center font-extrabold mb-12 underline decoration-gray-900">
+				<h2 className="text-4xl md:text-6xl text-center font-extrabold mb-16 underline decoration-blue-400">
 					About Us
 				</h2>
 				<div className="mb-12 text-center text-gray-400">
 					<p className="mb-6 text-xl leading-relaxed">{aboutus.history}</p>
-					<h3 className="text-3xl font-semibold mb-4">Mission</h3>
-					<p className="mb-6 text-lg">{aboutus.mission}</p>
-					<h3 className="text-3xl font-semibold mb-4">Vision</h3>
-					<p className="text-lg">{aboutus.vision}</p>
+					
 				</div>
 				<h3 className="text-3xl font-semibold mb-4 text-center">
 					Our Faculty
