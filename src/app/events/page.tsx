@@ -1,5 +1,6 @@
 import React from "react";
 import { HoverBorderGradient } from "@/Components/ui/hover-border-gradient";
+import Image from "next/image";
 
 const events = [
 	{
@@ -91,15 +92,18 @@ const Events = () => {
 				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
 					{events.map((event: Event) => (
 						<HoverBorderGradient
+							key={event.id}
 							containerClassName="rounded"
 							as="button"
 							className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2">
 							<div
 								key={event.id}
 								className=" bg-black rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-								<img
+								<Image
 									src={event.image}
 									alt={event.title}
+									width={400}
+									height={300}
 									className="rounded-lg mb-4 h-[280px] w-full"
 								/>
 								<div className="p-6 w-full">

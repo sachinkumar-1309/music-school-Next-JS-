@@ -96,6 +96,7 @@ export const WavyBackground = ({
 		init();
 		return () => {
 			cancelAnimationFrame(animationId);
+			console.log(animationId, init);
 		};
 	}, []);
 

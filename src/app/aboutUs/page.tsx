@@ -63,10 +63,12 @@ const AboutUs = () => {
 						<div
 							key={index}
 							className=" bg-black/[0.1] border border-gray-800 p-6 rounded-lg shadow-lg">
-							<img
+							<Image
 								className="w-full h-[20rem]"
 								src={member.image}
 								alt={member.name}
+								width={400}
+								height={300}
 							/>
 							<h4 className="text-xl font-bold mb-2 mt-1">{member.name}</h4>
 							<p className="text-sm font-semibold mb-1 text-gray-300 ">

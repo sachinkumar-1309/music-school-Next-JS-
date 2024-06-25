@@ -2,6 +2,7 @@
 // components/Testimonials.js
 import React from "react";
 import styles from "./Testimonials.module.css";
+import Image from "next/image";
 
 const testimonials = [
 	{
@@ -85,10 +86,12 @@ const Testimonials = () => {
 							key={index}>
 							{index === current && (
 								<div className={styles.testimonialContent}>
-									<img
+									<Image
 										src={testimonial.photo}
 										alt={testimonial.name}
 										className={styles.photo}
+										width={400}
+										height={300}
 									/>
 									<p className={styles.text}>{testimonial.testimonial}</p>
 									<h4 className={styles.name}>{testimonial.name}</h4>
