@@ -19,11 +19,11 @@ import Loader from "@/Components/shared/Loader";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import toast, { Toaster } from "react-hot-toast";
-// import { useDispatch } from "react-redux";
-// import { login } from "@/store/authSlice";
+import { useDispatch } from "react-redux";
+import { login } from "../../store/authSlice";
 
 export default function ProfileForm() {
-	// const dispatch = useDispatch();
+	const dispatch = useDispatch();
 	const router = useRouter();
 	const [isLoading, setisLoading] = useState<boolean>(false);
 	// ...
@@ -42,16 +42,19 @@ export default function ProfileForm() {
 		// create user
 		try {
 			const response = await axios.post("/api/users/login", values);
-			console.log("User logged in successfully: " + response.data);
-			// dispatch(login(response.data));
+			console.log(
+				"User logged in successfully: " + JSON.stringify(response.data)
+			);
+			console.log("Dispatch: " + dispatch(login(response.data.data)));
+			dispatch(login(response.data));
 
 			router.push("/");
 			toast("User signed in succesfully");
-			<Toaster containerClassName="z-[51]"/>;
+			<Toaster containerClassName="z-[51]" />;
 		} catch (error: any) {
 			console.log(error.message);
 		}
-		console.log(values);
+		// console.log(values);
 	}
 	const BottomGradient = () => {
 		return (

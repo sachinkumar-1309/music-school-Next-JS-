@@ -19,9 +19,13 @@ import Loader from "@/Components/shared/Loader";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import toast, { Toaster } from "react-hot-toast";
+import { useDispatch, useSelector } from "react-redux";
+import { login } from "../../store/authSlice";
 
 export default function ProfileForm() {
+	const dispatch = useDispatch();
 	const router = useRouter();
+
 	const [isLoading, setisLoading] = useState<boolean>(false);
 	// ...
 	// 1. Define your form.
@@ -42,6 +46,9 @@ export default function ProfileForm() {
 		try {
 			const response = await axios.post("/api/users/signup", values);
 			console.log("User registered successfully: " + response.data);
+			if (response) {
+				dispatch(login(response.data.data));
+			}
 			router.push("/login");
 			toast("User signed in succesfully");
 			<Toaster />;
@@ -50,6 +57,7 @@ export default function ProfileForm() {
 		}
 		console.log(values);
 	}
+	console.log("Status -> " + useSelector((state: any) => state.status));
 	const BottomGradient = () => {
 		return (
 			<>

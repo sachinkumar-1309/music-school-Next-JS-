@@ -1,14 +1,12 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import { motion } from "framer-motion";
+
 export const StickyScroll = ({
 	content,
 }: {
-	content: {
-		title: string;
-		description: string;
-	}[];
+	content: { title: string; description: string }[];
 }) => {
 	const [activeCard, setActiveCard] = React.useState(0);
 	const ref = useRef<any>(null);
@@ -16,6 +14,7 @@ export const StickyScroll = ({
 		container: ref,
 		offset: ["start start", "end start"],
 	});
+
 	const cardLength = content.length;
 
 	useMotionValueEvent(scrollYProgress, "change", (latest) => {
@@ -27,6 +26,44 @@ export const StickyScroll = ({
 		});
 	});
 
+	useEffect(() => {
+		const handleMouseEnter = () => {
+			if (ref.current) {
+				ref.current.style.height = "100vh";
+			}
+		};
+
+		const handleMouseLeave = () => {
+			if (ref.current) {
+				ref.current.style.height = "";
+			}
+		};
+
+		const handleScroll = () => {
+			if (ref.current) {
+				ref.current.style.height = "100vh";
+			}
+		};
+
+		const containerRef = ref.current;
+
+		if (containerRef) {
+			containerRef.addEventListener("mouseenter", handleMouseEnter);
+			containerRef.addEventListener("mouseleave", handleMouseLeave);
+			containerRef.addEventListener("scroll", handleScroll);
+			window.addEventListener("scroll", handleScroll);
+		}
+
+		return () => {
+			if (containerRef) {
+				containerRef.removeEventListener("mouseenter", handleMouseEnter);
+				containerRef.removeEventListener("mouseleave", handleMouseLeave);
+				containerRef.removeEventListener("scroll", handleScroll);
+			}
+			window.removeEventListener("scroll", handleScroll);
+		};
+	}, []);
+
 	const backgroundColors = [
 		"var(--slate-900)",
 		"var(--black)",
@@ -37,6 +74,7 @@ export const StickyScroll = ({
 		"linear-gradient(to bottom right, var(--pink-500), var(--indigo-500))",
 		"linear-gradient(to bottom right, var(--orange-500), var(--yellow-500))",
 	];
+
 	return (
 		<motion.div
 			animate={{
@@ -50,23 +88,15 @@ export const StickyScroll = ({
 					{content.map((item, index) => (
 						<div key={item.title + index} className="my-20">
 							<motion.h2
-								initial={{
-									opacity: 0,
-								}}
-								animate={{
-									opacity: activeCard === index ? 1 : 0.3,
-								}}
+								initial={{ opacity: 0 }}
+								animate={{ opacity: activeCard === index ? 1 : 0.3 }}
 								className="text-2xl font-bold text-slate-100">
 								{item.title}
 							</motion.h2>
 							<motion.p
-								initial={{
-									opacity: 0,
-								}}
-								animate={{
-									opacity: activeCard === index ? 1 : 0.3,
-								}}
-								className="text-kg text-slate-300 max-w-sm mt-10">
+								initial={{ opacity: 0 }}
+								animate={{ opacity: activeCard === index ? 1 : 0.3 }}
+								className="text-lg text-slate-300 max-w-sm mt-10">
 								{item.description}
 							</motion.p>
 						</div>
