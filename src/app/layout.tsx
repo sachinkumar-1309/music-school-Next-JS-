@@ -1,13 +1,7 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/Components/Navbar";
-import Footer from "@/Components/Footer";
-import AuthSection from "@/Components/AuthSection";
-// import { Provider } from "react-redux";
-// import store from "@/store/store";
-
-const inter = Inter({ subsets: ["latin"] });
+import ClientProvider from "./ClientProvider";
+import ClientLayout from "./ClientLayout";
 
 export const metadata: Metadata = {
 	title: "Music School",
@@ -18,17 +12,12 @@ export default function RootLayout({
 	children,
 }: Readonly<{ children: React.ReactNode }>) {
 	return (
-		<html lang="en" className="dark">
-			{/* <Provider store={store}> */}
-				<body
-					className={`${inter.className} relative min-h-screen bg-black/[0.96] antialiased bg-grid-white/[0.02] `}>
-					<AuthSection />
-					<Navbar />
-					{children}
-					<Footer />
-					<div></div>
-				</body>
-			{/* </Provider> */}
+		<html lang="en" className="dark relative min-h-screen bg-orange/[0.76] antialiased bg-grid-white/[0.1]">
+			<body>
+				<ClientProvider>
+					<ClientLayout>{children}</ClientLayout>
+				</ClientProvider>
+			</body>
 		</html>
 	);
 }
