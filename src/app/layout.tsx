@@ -3,6 +3,9 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/Components/Navbar";
 import Footer from "@/Components/Footer";
+import AuthSection from "@/Components/AuthSection";
+// import { Provider } from "react-redux";
+// import store from "@/store/store";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,15 +19,16 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
 	return (
 		<html lang="en" className="dark">
-			<body className={`${inter.className} min-h-screen bg-black/[0.96] antialiased bg-grid-white/[0.02] `}>
-				<div className="relative flex items-center justify-center w-full ">
+			{/* <Provider store={store}> */}
+				<body
+					className={`${inter.className} relative min-h-screen bg-black/[0.96] antialiased bg-grid-white/[0.02] `}>
+					<AuthSection />
 					<Navbar />
-				</div>
-				{children}
-				<div>
-				<Footer />
-				</div>
-			</body>
+					{children}
+					<Footer />
+					<div></div>
+				</body>
+			{/* </Provider> */}
 		</html>
 	);
 }

@@ -10,11 +10,11 @@ function Footer() {
 						fostering a vibrant community of musicians.
 					</p>
 				</div>
-				<div className=" text-center">
+				<div className=" lg:text-center">
 					<h2 className="text-white text-lg font-semibold mb-4">
 						Quick Links
 					</h2>
-					<ul className="mr-10">
+					<ul className="mr-10 gap-4 flex lg:block">
 						<li>
 							<a
 								href="/"
@@ -25,7 +25,7 @@ function Footer() {
 						<li>
 							<a
 								href="/aboutus"
-								className="hover:text-white transition-colors duration-300">
+								className="hover:text-white transition-colors duration-300 sm:ml-0 ml-3">
 								About
 							</a>
 						</li>
