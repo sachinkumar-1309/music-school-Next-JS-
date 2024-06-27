@@ -45,7 +45,7 @@ export default function TestimonialCards() {
 				<div className="w-full max-w-6xl">
 					<InfiniteMovingCards
 						items={musicSchoolTestimonials}
-						direction="left"
+						direction="right"
 						speed="slow"
 					/>
 				</div>
