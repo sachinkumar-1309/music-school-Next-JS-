@@ -2,7 +2,7 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { any, z } from "zod";
+import { z } from "zod";
 import { Button } from "@/Components/ui/buttonSHAD";
 import axios from "axios";
 import {
@@ -21,8 +21,9 @@ import { useRouter } from "next/navigation";
 import toast, { Toaster } from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { login } from "../../store/authSlice";
+import { capitalizeName } from "@/lib/utils";
 
-export default function ProfileForm() {
+export default function LoginPage() {
 	const dispatch = useDispatch();
 	const router = useRouter();
 	const [isLoading, setisLoading] = useState<boolean>(false);
@@ -46,10 +47,15 @@ export default function ProfileForm() {
 				"User logged in successfully: " + JSON.stringify(response.data)
 			);
 			console.log("Dispatch: " + dispatch(login(response.data.data)));
-			dispatch(login(response.data));
-
+			dispatch(login({ userdata: response.data.data }));
 			router.push("/");
-			toast("User signed in succesfully");
+			toast.success(
+				`Hey ${capitalizeName(response.data.data.name)} you, Logged IN`,
+				{
+					position: "bottom-right",
+				}
+			);
+
 			<Toaster containerClassName="z-[51]" />;
 		} catch (error: any) {
 			console.log(error.message);
@@ -64,6 +70,7 @@ export default function ProfileForm() {
 			</>
 		);
 	};
+	const toastKro = () => {};
 	return (
 		<div className="border border-gray-600 m-36 mb-28  w-[85vw] xl:w-[30vw] md:w-[50vw] rounded-xl mx-auto sm:p-8 p-4">
 			<h2 className="font-bold lg:text-3xl sm:text-2xl text-lg text-neutral-800 dark:text-neutral-200">
@@ -121,6 +128,7 @@ export default function ProfileForm() {
 					</Button>
 				</form>
 			</Form>
+			{/* <button type="button" onClick={toastKro} className="px-3 py-1 border bg-green-300">Click</button> */}
 		</div>
 	);
 }

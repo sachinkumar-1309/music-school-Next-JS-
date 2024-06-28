@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import Testimonials from "../testimonials/page";
+import Testimonials from "../testimonials/Page";
 import Showcase from "../showcase/page";
 
 const aboutus = {
@@ -53,7 +53,6 @@ const AboutUs = () => {
 				</h2>
 				<div className="mb-12 text-center text-gray-400">
 					<p className="mb-6 text-xl leading-relaxed">{aboutus.history}</p>
-					
 				</div>
 				<h3 className="text-3xl font-semibold mb-4 text-center">
 					Our Faculty

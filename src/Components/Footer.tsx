@@ -73,8 +73,22 @@ function Footer() {
 					</h2>
 					<p>Jharkhand, India</p>
 					<p>Dumka 814101</p>
-					<p>Email: sachinkg1309@gmail.com</p>
-					<p>Phone: (+91) 9693186899</p>
+					<p>
+						Email:{" "}
+						<a
+							href="mailto:sachinkg1309@gmail.com"
+							className="text-blue-500 hover:underline">
+							sachinkg1309@gmail.com
+						</a>
+					</p>
+					<p>
+						Phone:{" "}
+						<a
+							href="tel:+919693186899"
+							className="text-blue-500 hover:underline">
+							(+91) 9693186899
+						</a>
+					</p>
 				</div>
 			</div>
 			<p className="text-center text-xs pt-8">

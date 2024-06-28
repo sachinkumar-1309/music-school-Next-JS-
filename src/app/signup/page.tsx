@@ -22,7 +22,7 @@ import toast, { Toaster } from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../store/authSlice";
 
-export default function ProfileForm() {
+export default function SignUpPage() {
 	const dispatch = useDispatch();
 	const router = useRouter();
 

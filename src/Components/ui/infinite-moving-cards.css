@@ -1,0 +1,10 @@
+.infinite-moving-card {
+	width: 350px; /* Adjust as needed */
+	max-width: 100%; /* Ensure it doesn't exceed container */
+	/* Add other styles as needed */
+}
+
+.infinite-moving-card-inner {
+	background: linear-gradient(180deg, var(--slate-800), var(--slate-900));
+	/* Add other styles as needed */
+}

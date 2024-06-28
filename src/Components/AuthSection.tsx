@@ -6,19 +6,25 @@ import React from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
 import { logout as authLogout } from "../store/authSlice";
+import { capitalizeName } from "@/lib/utils";
 
 export default function AuthSection() {
 	const router = useRouter();
 	const dispatch = useDispatch();
 	const Login = useSelector((state: any) => state.auth.status);
+	const userData = useSelector((state: any) => state.auth.userdata);
+	// console.log(userData);
 
 	const logout = async () => {
 		try {
 			await axios.get("api/users/logout");
-			toast("Logged out");
+
 			dispatch(authLogout());
 			console.log("logged out");
 			router.push("/login");
+			toast.success(`Hey ${capitalizeName(userData.name)} you, Logged out`, {
+				position: "bottom-right",
+			});
 		} catch (error: any) {
 			console.log(error.message);
 			toast("Logout failed");
@@ -30,7 +36,7 @@ export default function AuthSection() {
 	};
 
 	return (
-		<div className="w-[48px] rounded-xl flex flex-col justify-center items-center top-10 bg-black fixed p-2 right-4 z-50 border border-gray-700 space-y-2">
+		<div className="sm:w-[48px] w-[45px] rounded-full flex flex-col justify-center items-center top-12 max-[920px]:top-32 sm:top bg-black fixed sm:p-2 p-1 sm:right-4 right-2 z-50 border border-gray-700 space-y-2">
 			{Login ? (
 				<button
 					className="w-full flex justify-center relative group"

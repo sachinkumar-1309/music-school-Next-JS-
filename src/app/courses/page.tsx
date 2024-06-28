@@ -3,8 +3,10 @@ import Image from "next/image";
 import React from "react";
 import { CardBody, CardContainer, CardItem } from "@/Components/ui/3D-card";
 import courseData from "@/data/music_data.json";
+import { useSelector } from "react-redux";
 
-function page() {
+function Page() {
+	const Login = useSelector((state: any) => state.auth.status);
 	return (
 		<div className="min-h-screen bg-black/[0.96] antialiased bg-grid-white/[0.05] py-12 pt-36">
 			<h1 className="text-lg md:text-7xl text-center font-sans font-bold mb-8 text-white">
@@ -34,19 +36,24 @@ function page() {
 									alt={course.title}
 								/>
 							</CardItem>
-							<div className="flex justify-between items-center mt-20">
+							<div
+								className={`flex items-center mt-20 ${
+									Login ? "justify-center" : "justify-between"
+								}`}>
 								<CardItem
 									translateZ={20}
 									as="button"
 									className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white">
 									Try now →
 								</CardItem>
-								<CardItem
-									translateZ={20}
-									as="button"
-									className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold">
-									Sign up
-								</CardItem>
+								{!Login && (
+									<CardItem
+										translateZ={20}
+										as="button"
+										className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold">
+										Sign up
+									</CardItem>
+								)}
 							</div>
 						</CardBody>
 					</CardContainer>
@@ -56,4 +63,4 @@ function page() {
 	);
 }
 
-export default page;
+export default Page;

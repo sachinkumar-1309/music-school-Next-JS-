@@ -50,7 +50,7 @@ const events = [
 		location: "Outdoor Stage",
 		description:
 			"Experience a night of mesmerizing jazz performances by our advanced students and guest artists. Enjoy an evening under the stars filled with soulful music.",
-		image: "/courses/Events/JazzNIght.jpg",
+		image: "/courses/Events/JazzNight.jpg",
 	},
 	{
 		id: 6,
