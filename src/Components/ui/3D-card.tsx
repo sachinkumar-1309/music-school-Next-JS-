@@ -293,9 +293,9 @@ export const CardItem = ({
 		rotateZ,
 	]);
 
-	useEffect(() => {
-		handleAnimations();
-	}, [handleAnimations]);
+	// useEffect(() => {
+	// 	handleAnimations();
+	// }, [handleAnimations]);
 
 	return (
 		<Tag
