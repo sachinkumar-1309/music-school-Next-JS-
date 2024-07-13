@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import Testimonials from "../testimonials/Page";
+import Testimonials from "../testimonials/page";
 import Showcase from "../showcase/page";
 
 const aboutus = {
