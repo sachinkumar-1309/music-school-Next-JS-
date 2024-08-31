@@ -70,7 +70,7 @@ export default function LoginPage() {
 			</>
 		);
 	};
-	const toastKro = () => {};
+	// const toastKro = () => {};
 	return (
 		<div className="border border-gray-600 m-36 mb-28  w-[85vw] xl:w-[30vw] md:w-[50vw] rounded-xl mx-auto sm:p-8 p-4">
 			<h2 className="font-bold lg:text-3xl sm:text-2xl text-lg text-neutral-800 dark:text-neutral-200">

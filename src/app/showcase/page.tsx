@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
-import Image from "next/image";
-import { HoverEffect } from "@/Components/ui/card-hover-effect";
+// import Image from "next/image";
+// import { HoverEffect } from "@/Components/ui/card-hover-effect";
 
 type Showcases = {
 	id: number;
