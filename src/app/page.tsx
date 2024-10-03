@@ -10,11 +10,11 @@ export default function Home() {
 	return (
 			<main className="relative">
 				<HeroSection />
-				<FeaturedSection />
+				{/* <FeaturedSection />
 				<WhyChooseUs />
 				<TestimonialCards />
 				<UpcomingWebinars />
-				<Instructors />
+				<Instructors /> */}
 			</main>
 	);
 }
